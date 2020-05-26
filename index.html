@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  
+</head>
+<body >
+  <section class="first" >
+  <div class="containers">
+  </div>
+<div id="fade1" class="describe">
+  <h3>Welcome To Our Product</h3>
+  
+  <h4>Test Me if You Can </h4>
+  
+</div>
+<h3 id="more"> Our Service and Offers </h3>
+</section>
+
+ 
+  
+
+</body>
+<script>
+ count=1
+ more=0
+  window.addEventListener('wheel', function(event)
+{
+ if (event.deltaY < 0)
+ {
+   if(count>1)
+   {
+     count=1
+   }
+   else{
+  count=count+0.3
+  more=1-count;
+  document.getElementById("fade1").style.opacity = count;
+  document.getElementById("more").style.opacity = more;
+  console.log(count)
+ }}
+ else if (event.deltaY > 0)
+ {
+   if(count<0)
+   {
+     count=0
+   }
+   else{
+  count=count-0.3
+  more=1-count;
+  document.getElementById("more").style.opacity = more;
+  document.getElementById("fade1").style.opacity = count;
+  console.log(count)
+ }
+}
+});
+  </script>
+
+
+</html>
